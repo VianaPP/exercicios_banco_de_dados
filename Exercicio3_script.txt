@@ -1,0 +1,54 @@
+-- Criando o Banco de dados Filme
+create database Filme;
+-- Usando o banco de dados
+use Filme;
+
+-- Criando a Tabela filme
+create table TB_filme(
+idfilme  int primary key,
+titulo varchar(60),
+genero varchar(60),
+diretor varchar (60) 
+);
+
+-- Selecionando e Exibindo a tabela
+select * from TB_filme;
+
+-- Inserindo os valores dos campos na tabela
+insert into TB_filme (idfilme, titulo, genero, diretor) values (1,'Aquaman', 'ficção/ação', 'James Wan');
+
+insert into TB_filme (idfilme, titulo) values (2,'Jogos Vorazes');
+
+insert into TB_filme (titulo, idfilme) values ('Piratas do Caribe', 3);
+
+insert into TB_filme (idfilme, titulo) values (4,'Deadpool');
+
+insert into TB_filme (idfilme, titulo) values (5,'10.000 A.C');
+
+insert into TB_filme (idfilme, titulo) values (6,'Bright');
+
+select * from TB_filme;
+
+
+/* DESAFIO */
+
+-- Acrescentar a coluna:
+alter table TB_filme add Media varchar(30);
+alter table TB_filme add column Sequencia varchar(30);
+
+-- Alterar o tamanho da coluna
+alter table TB_filme modify Media varchar (20);
+
+-- Mostrar a estrutura da Tabela:
+desc TB_filme;
+describe TB_filme;
+
+-- Excluir a coluna da tabela
+alter table TB_filme drop titulo;
+alter table TB_filme drop column idfilme;
+
+-- Exibir os dados da tabela ordenados crescente:
+select * from TB_filme order by sequencia;
+
+-- Exibir os dados da tabela ordenados decrescente:
+ select * from TB_filme order by sequencia desc, genero desc;
